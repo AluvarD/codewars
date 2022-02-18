@@ -180,4 +180,29 @@ public class Main {
             return new long[] {n1, n2, 0};
         }
     }
+
+    public static String longestConsec(String[] strarr, int k) {
+        StringBuilder tempString = new StringBuilder();
+        String result = "";
+        if (k == 1) {
+            for (String s : strarr) {
+                if (s.length() > result.length()) {
+                    result = s;
+                }
+            }
+        } else if (k <= 0) {
+            return result;
+        } else {
+            for (int i = 0; i <= strarr.length - k; i++) {
+                for (int j = 0; j < k; j++) {
+                    tempString.append(strarr[i + j]);
+                }
+                if (tempString.toString().length() > result.length()) {
+                    result = tempString.toString();
+                }
+                tempString = new StringBuilder();
+            }
+        }
+        return result;
+    }
 }
