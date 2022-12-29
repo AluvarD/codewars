@@ -16,7 +16,7 @@ public class JosephusSurvivor {
             removeKey = getRemoveIndex(arrayList.size(), removeKey, k);
             arrayList.remove(removeKey);
         } while (arrayList.size() > 1);
-        
+
         if (arrayList.isEmpty()) {
             return 0;
         } else {
